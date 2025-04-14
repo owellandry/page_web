@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -59,16 +58,14 @@ export default function RootLayout({
   return (
     <html lang="es" className={jetbrainsMono.variable}>
       <body>
-        <div className="grid-background"></div>
-        <div className="glow glow-purple"></div>
-        <div className="glow glow-blue"></div>
-        <div className="glow glow-pink"></div>
+        {/* Fondos con pointer-events-none para que no bloqueen interacciones */}
+        <div className="grid-background pointer-events-none"></div>
+        <div className="glow glow-purple pointer-events-none"></div>
+        <div className="glow glow-blue pointer-events-none"></div>
+        <div className="glow glow-pink pointer-events-none"></div>
         {children}
         <DevelopmentAlert />
       </body>
     </html>
   )
 }
-
-
-import './globals.css'

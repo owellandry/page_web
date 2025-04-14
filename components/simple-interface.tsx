@@ -128,8 +128,8 @@ export default function SimpleInterface() {
 
         {/* Área de trabajo */}
         <div className="flex-1 p-6 relative">
-          {/* Cuadrícula de fondo */}
-          <div className="absolute inset-0 grid-background opacity-20"></div>
+          {/* Cuadrícula de fondo - MODIFICADA para que no bloquee interacciones */}
+          <div className="absolute inset-0 grid-background opacity-20 pointer-events-none"></div>
 
           {/* Bloques conectados (estáticos) */}
           <div className="relative h-full">
@@ -166,7 +166,7 @@ export default function SimpleInterface() {
 
       {/* Elementos flotantes */}
       <motion.div
-        className="absolute bottom-10 right-10 text-hot-pink text-opacity-20 text-4xl"
+        className="absolute bottom-10 right-10 text-hot-pink text-opacity-20 text-4xl pointer-events-none"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       >
@@ -174,7 +174,7 @@ export default function SimpleInterface() {
       </motion.div>
 
       <motion.div
-        className="absolute top-20 left-10 text-bright-blue text-opacity-20 text-2xl"
+        className="absolute top-20 left-10 text-bright-blue text-opacity-20 text-2xl pointer-events-none"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       >

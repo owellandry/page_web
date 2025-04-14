@@ -1,5 +1,3 @@
-/* stylelint-disable at-rule-no-unknown */
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,7 +27,7 @@ body {
   position: relative;
 }
 
-/* Grid background */
+/* Grid background - MODIFICADO para que no bloquee interacciones */
 .grid-background {
   position: fixed;
   top: 0;
@@ -40,15 +38,17 @@ body {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   z-index: -1;
+  pointer-events: none; /* Esto permite que los clics pasen a través del elemento */
 }
 
-/* Glow effects */
+/* Glow effects - MODIFICADOS para que no bloqueen interacciones */
 .glow {
   position: fixed;
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.15;
   z-index: -1;
+  pointer-events: none; /* Esto permite que los clics pasen a través del elemento */
 }
 
 .glow-purple {

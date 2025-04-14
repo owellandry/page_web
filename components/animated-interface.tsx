@@ -31,7 +31,7 @@ export default function AnimatedInterface() {
     const particleCount = 30
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement("div")
-      particle.className = "absolute rounded-full opacity-20"
+      particle.className = "absolute rounded-full opacity-20 pointer-events-none"
 
       // Tamaño aleatorio
       const size = Math.random() * 6 + 2
@@ -139,8 +139,8 @@ export default function AnimatedInterface() {
 
         {/* Área de trabajo */}
         <div className="flex-1 p-6 relative">
-          {/* Cuadrícula de fondo */}
-          <div className="absolute inset-0 grid-background opacity-20"></div>
+          {/* Cuadrícula de fondo - MODIFICADA para que no bloquee interacciones */}
+          <div className="absolute inset-0 grid-background opacity-20 pointer-events-none"></div>
 
           {/* Animación de bloques conectándose */}
           <div className="relative h-full">
@@ -166,7 +166,7 @@ export default function AnimatedInterface() {
                 opacity: step >= 1 ? 1 : 0,
               }}
               transition={{ duration: 0.5 }}
-              className="absolute top-[88px] left-[28px] h-8 w-0.5 bg-white/50"
+              className="absolute top-[88px] left-[28px] h-8 w-0.5 bg-white/50 pointer-events-none"
             ></motion.div>
 
             {/* Bloque 2: if */}
@@ -191,7 +191,7 @@ export default function AnimatedInterface() {
                 opacity: step >= 2 ? 1 : 0,
               }}
               transition={{ duration: 0.5 }}
-              className="absolute top-[120px] left-[160px] h-0.5 w-20 bg-white/50"
+              className="absolute top-[120px] left-[160px] h-0.5 w-20 bg-white/50 pointer-events-none"
             ></motion.div>
 
             {/* Bloque 3: else */}
@@ -216,7 +216,7 @@ export default function AnimatedInterface() {
                 opacity: step >= 3 ? 1 : 0,
               }}
               transition={{ duration: 0.5 }}
-              className="absolute top-[198px] left-[28px] h-8 w-0.5 bg-white/50"
+              className="absolute top-[198px] left-[28px] h-8 w-0.5 bg-white/50 pointer-events-none"
             ></motion.div>
 
             {/* Bloque 4: send message */}
@@ -257,7 +257,7 @@ export default function AnimatedInterface() {
 
       {/* Elementos flotantes */}
       <motion.div
-        className="absolute bottom-10 right-10 text-hot-pink text-opacity-20 text-4xl"
+        className="absolute bottom-10 right-10 text-hot-pink text-opacity-20 text-4xl pointer-events-none"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       >
@@ -265,7 +265,7 @@ export default function AnimatedInterface() {
       </motion.div>
 
       <motion.div
-        className="absolute top-20 left-10 text-bright-blue text-opacity-20 text-2xl"
+        className="absolute top-20 left-10 text-bright-blue text-opacity-20 text-2xl pointer-events-none"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       >
