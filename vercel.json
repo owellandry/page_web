@@ -1,5 +1,12 @@
 {
   "installCommand": null,
   "buildCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://cordlang.com",
+      "permanent": true
+    }
+  ]
 }
